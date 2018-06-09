@@ -62,6 +62,7 @@ Future<Null> removeHook(String hookName,
   hookFile.deleteSync();
 }
 
+// TODO:stepancar replace with parse pubspec.yaml
 getHookScript(String hookName) => '''
 #!/bin/bash
 # Created by hanzo
