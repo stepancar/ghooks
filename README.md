@@ -1,27 +1,21 @@
-# hanzo
+# dart ghooks
 
 A library to easily use git hooks from Dart
 
 ## Install
 
-To start using Hanzo, add it to your `dev_dependencies` and run `pub get`
+To start using ghooks, add it to your `dev_dependencies` and run `pub get`
 
 To install hooks in your project, run:
 
-    $ pub run hanzo install
+    $ pub run ghooks install
         
-Now create a matching git hook dart file in `./tool` directory (create if needed).
+Add your hook to pubspec.yaml
     
 Example:
     
-```dart
-    // in ./tool/pre_commit.dart
-    main(List<String> arguments) => 
-        print("I'll run before a commit is made!");
-
-    // in ./tool/commit_msg.dart
-    main(List<String> arguments) => 
-        print("I'll run after commit message is entered!");
+```
+    pre-commit: ./lint.sh && ./test.sh
 ```
         
 
@@ -36,16 +30,16 @@ Example:
 
 To remove all hooks in your project, run:
 
-    $ pub run hanzo remove
+    $ pub run ghooks remove
     
 Or if you want to remove a specific hook:
     
-    $ pub run hanzo remove -k pre-commit -k commit-msg
+    $ pub run ghooks remove -k pre-commit -k commit-msg
 
 ## Git Hooks
 
 Git hooks are scripts that run automatically every time a particular event occurs in a Git repository. 
-Hanzo supports all git hooks (https://git-scm.com/docs/githooks)
+ghooks supports all git hooks (https://git-scm.com/docs/githooks)
 
 | Git hook | Dart script name |
 | -------- | ---------- |
@@ -76,4 +70,4 @@ Git params will be passed as arguments to the main function of the Dart script.
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[tracker]: https://github.com/andresaraujo/hanzo/issues
+[tracker]: https://github.com/stepancar/ghooks/issues
