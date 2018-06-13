@@ -2,11 +2,11 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:args/command_runner.dart';
-import 'package:hanzo/hanzo.dart';
+import 'package:ghooks/ghooks.dart';
 
 void main(List<String> arguments) {
   final runner =
-      new CommandRunner("hanzo", "A tool to use git hooks from Dart.")
+      new CommandRunner("ghooks", "A tool to use git hooks described in Dart pubspec.yaml.")
         ..addCommand(new InstallCommand())
         ..addCommand(new RemoveCommand());
 
@@ -31,8 +31,7 @@ class InstallCommand extends Command {
     if (!isGitProject()) {
       return;
     }
-    install(argResults['hook'],
-        addPrecommitSample: argResults['precommit-sample']);
+    install(argResults['hook']);
   }
 }
 

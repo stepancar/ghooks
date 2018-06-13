@@ -1,6 +1,6 @@
 name: ghooks
-description: A library to easily use git hooks from Dart.
-version: 0.1.1
+description: A library to easily use git hooks in Dart project.
+version: 0.0.1
 homepage: https://github.com/stepancar/ghooks
 author: stepancar <stepancar@hotmail.com>
 
@@ -14,3 +14,6 @@ dependencies:
 dev_dependencies:
   test: ^0.12.0
   grinder: ^0.8.0+3
+
+ghooks:
+       pre-commit: pub run test
