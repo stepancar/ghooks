@@ -18,14 +18,6 @@ Example:
     ghooks:
         pre-commit: ./lint.sh && ./test.sh
 ```
-        
-
-### Install options
-
-| Option/Flag | abbreviation | description |
-| -------- | ---------- | ---------- |
-| `--precommit-sample` | none | If flag is passed it will create a sample pre commit Dart script. Defaults to `false` |
-| `--hook <hook-name>` | -k | Creates a bash script for the hook passed, supports passing multiple hooks. Defaults to `all` scripts. Example: `-k pre-commit -k commit-msg` |
 
 ## Remove
 
